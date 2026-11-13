@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <!-- Make the page fit phone screens as well as computers. -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- This appears in the browser tab. -->
+    <title>My Notes</title>
+    <!-- Load Bootstrap's ready-made styles. -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+
+<body>
+    <!-- Center the content and limit how wide it can become. -->
+    <main class="container py-4" style="max-width: 640px;">
+        <h1 class="mb-4">My Notes</h1>
+        <!-- Group the inputs used to create a note. -->
+        <!-- The id lets our JavaScript find this form later. -->
+        <form id="note-form">
+            <h2 class="h4">Add a note</h2>
+            <div class="mb-3">
+                <!-- "for" matches the input's id. -->
+                <label for="title" class="form-label">Title</label>
+
+                <!-- A single-line field for the note's title. -->
+                <input
+                    type="text"
+                    id="title"
+                    class="form-control"
+                    placeholder="Give your note a title"
+                    maxlength="100"
+                    required
+                >
+            </div>
+
+            <div class="mb-3">
+                <label for="text" class="form-label">Note</label>
+
+                <!-- A larger field that accepts multiple lines. -->
+                <textarea
+                    id="text"
+                    class="form-control"
+                    rows="4"
+                    placeholder="Write your note here..."
+                    maxlength="2000"
+                    required
+                ></textarea>
+            </div>
+
+            <!-- We'll enable this when we add the saving behavior. -->
+            <button type="submit" class="btn btn-dark">
+                Add note
+            </button>
+        </form>
+
+        <hr class="my-4">
+
+        <h2 class="h4">Saved notes</h2>
+
+        <!-- Our JavaScript will display saved notes in this area. -->
+        <div id="notes">
+            <p class="text-secondary">No notes yet.</p>
+        </div>
+
+    </main>
+
+      <!-- Load our browser JavaScript after the page elements exist. -->
+    <script src="/app.js"></script>
+</body>
+</html>
